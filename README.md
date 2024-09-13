@@ -1,4 +1,4 @@
-# Is it Friday The 13th ? API
+# Friday the 13th API
 
 This API returns JSON whether today is Friday the 13th.
 
