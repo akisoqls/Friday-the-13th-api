@@ -1,7 +1,28 @@
 {
-  "version": "2",
+  "version": "4",
+  "specifiers": {
+    "jsr:@std/assert@*": "1.0.9",
+    "jsr:@std/assert@^1.0.9": "1.0.9",
+    "jsr:@std/internal@^1.0.5": "1.0.5"
+  },
+  "jsr": {
+    "@std/assert@1.0.9": {
+      "integrity": "a9f0c611a869cc791b26f523eec54c7e187aab7932c2c8e8bea0622d13680dcd",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
+    },
+    "@std/internal@1.0.5": {
+      "integrity": "54a546004f769c1ac9e025abd15a76b6671ddc9687e2313b67376125650dc7ba"
+    }
+  },
   "remote": {
     "https://deno.land/std@0.203.0/async/delay.ts": "a6142eb44cdd856b645086af2b811b1fcce08ec06bb7d50969e6a872ee9b8659",
     "https://deno.land/std@0.203.0/http/server.ts": "1b2403b3c544c0624ad23e8ca4e05877e65380d9e0d75d04957432d65c3d5f41"
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/assert@^1.0.9"
+    ]
   }
 }

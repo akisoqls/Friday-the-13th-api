@@ -1,4 +1,5 @@
 import { Server } from "https://deno.land/std@0.203.0/http/server.ts";
+import { isFriday13th } from "./isFriday13th.ts";
 
 const server = new Server({
   port: 3000,
@@ -9,10 +10,8 @@ const server = new Server({
     headers.set("Access-Control-Allow-Origin", "*");
 
     const today = new Date();
-    const date = today.getDate();
-    const day = today.getDay();
 
-    const isItFri13th = date === 13 && day == 5;
+    const isItFri13th = isFriday13th(today);
     return new Response(
       JSON.stringify({
         isFri13th: isItFri13th,
