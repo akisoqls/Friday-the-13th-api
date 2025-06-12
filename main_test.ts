@@ -1,6 +1,6 @@
-import { assertEquals } from "jsr:@std/assert";
+import { assert, assertEquals } from "jsr:@std/assert";
 import { isFriday13th } from "./isFriday13th.ts";
-import { getNextFriday13th } from "./nextFriday13th.ts";
+import { getNextFriday13th, getRandomFriday13th } from "./nextFriday13th.ts";
 
 Deno.test("2024/12/20 is Friday, but not the 13th", () => {
   const theLastFridayThe13thOf2024 = new Date();
@@ -48,4 +48,9 @@ Deno.test("Next Friday", () => {
   assertEquals(nextFriday.getMonth(), expectedDate.getMonth());
   assertEquals(nextFriday.getDate(), expectedDate.getDate());
   assertEquals(nextFriday.getDay(), expectedDate.getDay());
+});
+
+Deno.test("Random Friday the 13th", () => {
+  const randomFriday13th = getRandomFriday13th();
+  assert(isFriday13th(randomFriday13th));
 });
