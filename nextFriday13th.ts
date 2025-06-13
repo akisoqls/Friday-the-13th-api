@@ -36,3 +36,11 @@ export const getNextFriday13th = (fromDate?: Date): Date => {
 
   return currentMonth13th;
 };
+
+export const getRandomFriday13th = (): Date => {
+  const dateMinimum = new Date("0001-01-01T00:00:00.000Z").getTime();
+  const dateMaximum = new Date("9999-12-31T23:59:59.999Z").getTime();
+  const randomTime = Math.random() * (dateMaximum - dateMinimum) + dateMinimum;
+  const randomDate = new Date(randomTime);
+  return getNextFriday13th(randomDate);
+};
